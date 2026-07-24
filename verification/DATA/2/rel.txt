@@ -1,0 +1,14 @@
+sigma,tau,x0,x1
+
+sigma2 = sigma^40491355905
+g0 = sigma2^2
+u0 = (x0*tau)^40491355905
+u1 = (x1*tau)^40491355905
+d0 = u0*x0^-1
+z0 = x0^sigma2
+c0 = d0^-1*z0^-1*d0*z0
+dg = d0^g0
+hc = dg^-1*d0^-1*dg*d0
+h0 = x0^g0*x0*dg*d0*d0^2*hc
+
+h0*u1^-1*x1^sigma*c0

@@ -116,3 +116,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# Files generated during the verification process
+verification/DATA/*/lift.g
+verification/DATA/*/relhash
+verification/DATA/*/eltstore/*
+verification/DATA/*/race/*

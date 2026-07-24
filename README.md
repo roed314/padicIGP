@@ -1,6 +1,13 @@
 # padicIGP
 Code for counting the number of extensions of a p-adic field with a specified Galois group
 
+History
+=======
+
+* This repository is referenced in [The Inverse Galois Problem for p-adic Fields](https://doi.org/10.2140/obs.2019.2.393); the version at the publication of that paper is available at the [ANTS13 tag](../../releases/tag/ANTS13).
+* This repository also contains the [code used to verify](verification) prospective presentations of the absolute Galois group of Q_2; see the [FrontierMath Open Problem](https://epoch.ai/frontiermath/open-problems/q2-absolute-galois), now [solved](https://roed314.github.io/gq2).  The proven presentation is committed in git, so the [verify script](verification/verify) should pass with 0 failures.  See the [verification README](verification/README.md) for details on running the verification process.
+* Going forward, I plan to improve the interface of this repository and make it usable to count p-adic fields with specified Galois group.  The remainder of this README is currently unchanged from ANTS13.
+
 Installation
 ============
 

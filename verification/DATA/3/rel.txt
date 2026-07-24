@@ -1,0 +1,13 @@
+sigma,tau,x0,x1
+
+tau2 = tau^3011753745
+sigma2 = sigma^3011753745
+rho = tau2^4
+angle = (x0*tau*x0^-1*tau)^2974571600
+u = (x1*(rho^2)*x1*(rho^2))^2974571600
+v = sigma2*tau2
+w = (u*(v^2)*u^-1*(v^2))^2974571600
+y1 = x1^rho*(u^v)*(w^(sigma2*tau2^2))*(w^(tau2^2))
+comm = x1^-1*y1^-1*x1*y1
+
+(x0^sigma)^-1*angle*x1^3*comm

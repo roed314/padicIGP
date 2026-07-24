@@ -1,0 +1,18 @@
+#!/usr/bin/env sage
+
+import argparse
+from verification import main
+
+parser = argparse.ArgumentParser("verify", description="This script checks that a provided presentation for the absolute Galois group of Q_p (as a profinite group) correctly predicts the number of extensions with each possible finite Galois group (up to a limit).  See problem.tex for more details (including how to specify the presentation).")
+parser.add_argument("-p", "--prime", type=int, metavar="P", default=2, help="the residue characteristic")
+parser.add_argument("-j", "--jobs", type=int, metavar="NPROC", help="Number of processes to use in parallelizing verification")
+parser.add_argument("-t", "--timeout", type=int, metavar="T", help="When running with multiple processes, set a timeout on a subprocess.  This is the timeout for the whole tree above a given base (see --base-limit).")
+parser.add_argument("-e", "--early-abort", action="store_true", help="If this flag is set, stop when a problem is found rather than producing a summary")
+parser.add_argument("-b", "--base", help=argparse.SUPPRESS) # For recursion when running in parallel
+parser.add_argument("-k", "--qcutoff", metavar="K", type=int, help="Only check prime power groups of order up to p^K")
+parser.add_argument("-l", "--base-limit", metavar="L", type=int, default=100, help="When running in parallel, run up to groups of this order in single-threaded mode before parallelizing in a forest of groups mapping down to the groups computed so far")
+parser.add_argument("-v", "--verbose", action="store_true", help="Print additional status information while verification is proceeding")
+
+args = parser.parse_args()
+p = args.prime
+main(args.prime, base=args.base, base_limit=args.base_limit, qcutoff=args.qcutoff, ncores=args.jobs, early_abort=args.early_abort, verbose=args.verbose)
